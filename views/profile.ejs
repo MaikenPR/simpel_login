@@ -2,18 +2,15 @@
 
 <main>
 	<h1>Profile</h1>
+	<p>Brugernavn: <%= content.username %></p>
+	<form action="/profile/update" method="POST">
+		<input type="password" name="password">
+		<button type="submit">Skift kode</button>
+		
+	</form>
 	<a href="/logout">Log Out</a>
-	<!-- <form method="post">
-		<div class="form__inputGroup">
-			<label for="login__username" class="input__label">Username</label>
-			<input type="text" name="username" id="login__username" class="input__field" placeholder="you@email.com" required>
-		</div>
-		<div class="form__inputGroup">
-			<label for="login__passphrase" class="input__label">Passphrase</label>
-			<input type="password" name="passphrase" id="login__passphrase" class="input__field" placeholder="Your secret passphrase" required>
-		</div>
-		<button type="submit">Log in <span class="icon-login"></span></button>
-	</form> -->
+	<hr>
+	<a href="/profile/delete">SLET BRUGER</a>
 </main>
 
 <% include ./partials/after-footer.ejs %>
