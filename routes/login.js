@@ -9,6 +9,7 @@ module.exports = function (app) {
 		res.render('login', { 'page': { 'title': 'Login' } });
 	});
 
+	
 	app.post('/login', async (req, res) => {
 		try {
 			const valid = await User.valid(req.body.username, req.body.password);
@@ -24,6 +25,7 @@ module.exports = function (app) {
 			res.send(error);
 		}
 	});
+	
 
 	app.get('/logout', (req, res) => {
 		req.session.destroy((err) => {
